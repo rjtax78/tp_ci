@@ -18,6 +18,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
+                bat 'git --version',
                 bat 'npm start'
             }
         }
