@@ -13,12 +13,12 @@ pipeline {
                     def npmHome = tool name: 'NodeJS 12', type: 'NodeJSInstallation'
                     env.PATH = "${npmHome}/bin:${env.PATH}"
                 }
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Run Tests') {
             steps {
-                bat 'npm test'
+                sh 'npm test'
             }
         }
     }
